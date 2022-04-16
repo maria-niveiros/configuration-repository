@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: movie-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/movie_database
+    username: root
+    password: root
+
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:/movie-service.sql
+  jpa:
+    deferDatasourceInitialization: true
+    hibernate:
+      ddlAuto: create-drop
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    fetchRegistry: true
