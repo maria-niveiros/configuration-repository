@@ -1,14 +1,14 @@
+application:
+  name: catalog-service
 spring:
-
-  application:
-    name: serie-service
-  spring:
-    autoconfigure:
-      exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-    data:
-      mongodb:
-        authentication-database: admin
-        database: catalog
-        port: 27017
-        host: localhost
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  data:
+    mongodb:
+      authentication-database: admin
+      database: test_db
+      port: 27017
+      host: localhost
+server:
+  port: 8083
 
