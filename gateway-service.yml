@@ -8,10 +8,6 @@ spring:
           enabled: false
           lower-case-service-id: true
       routes:
-        - id: catalog-service-route
-          uri: lb://catalog-service
-          predicates:
-            - Path=/catalog/**
         - id: movie-service-route
           uri: lb://movie-service
           predicates:
