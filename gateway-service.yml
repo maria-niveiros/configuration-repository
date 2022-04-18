@@ -7,19 +7,19 @@ spring:
         locator:
           enabled: false
           lower-case-service-id: true
-#      routes:
-#        - id: catalog-service-route
-#          uri: lb://catalog-service
-#          predicates:
-#            - Path=/catalog/**
-#        - id: movie-service-route
-#          uri: lb://movie-library-service
-#          predicates:
-#            - Path=/movie/**
-#        - id: serie-service-route
-#            uri: lb://serie-library-service
-#            predicates:
-#              - Path=/series/**
+      routes:
+        - id: catalog-service-route
+          uri: lb://catalog-service
+          predicates:
+            - Path=/catalog/**
+        - id: movie-service-route
+          uri: lb://movie-service
+          predicates:
+            - Path=/movie/**
+        - id: serie-service-route
+            uri: lb://serie-service
+            predicates:
+              - Path=/serie/**
 server:
   port: 8080
 
