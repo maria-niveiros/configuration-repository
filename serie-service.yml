@@ -1,15 +1,13 @@
 application:
   name: serie-service
-datasource:
-  driver-class-name: com.mysql.cj.jdbc.Driver
-  url: jdbc:mysql://localhost:3306/movie-service.sql
-  username: root
-  password: root
-sql:
-  init:
-    mode: always
-    data-locations: classpath:/serie-service.sql
-jpa:
-  deferDatasourceInitialization: true
-  hibernate:
-    ddlAuto: create-drop
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  data:
+    mongodb:
+      authentication-database: admin
+      database: test_db
+      port: 27017
+      host: localhost
+
+
