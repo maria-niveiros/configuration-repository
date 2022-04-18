@@ -11,7 +11,12 @@ spring:
         - id: movie-service-route
           uri: lb://movie-service
           predicates: Path=/movie/**
-      
+        - id: serie-service-route
+          uri: lb://serie-service
+           predicates: Path=/serie/**
+        - id: catalog-service-route
+          uri: lb://catalog-service
+          predicates: Path=/catalog/**
 server:
   port: 8080
 
