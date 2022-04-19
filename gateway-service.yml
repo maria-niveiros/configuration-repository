@@ -1,6 +1,18 @@
 spring:
   application:
     name: gateway-service
+  security:
+    oauth2:
+      client:
+        provider:
+          google:
+            issuer-uri: https://accounts.google.com
+        registration:
+          google:
+            client-id:
+            client-secret:
+            scope: openid
+            redirect_uri: http://localhost:8080/login/oauth2/code/google
   cloud:
     gateway:
       discovery:
@@ -17,6 +29,9 @@ spring:
         - id: catalog-service-route
           uri: lb://catalog-service
           predicates: Path=/catalog/**
+      default-filters:
+        - OIDCTokenRelay
+
 server:
   port: 8080
 
