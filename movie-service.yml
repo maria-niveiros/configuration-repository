@@ -26,4 +26,12 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
   instance:
-    preferIpAddress: true 
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 10
+
+
+    info:
+      app:
+        description: Movie service
+        version: 1.0.0
